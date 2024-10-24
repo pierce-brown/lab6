@@ -8,7 +8,12 @@ def encode(password):
 
 def decode(encoded_password):
     # decoder logic
-    pass
+    decoded = ''
+    for digit in encoded_password:
+        digit = (int(digit) - 3) % 10
+        decoded += str(digit)
+
+    print(f'The encoded password is {encoded_password}, and the original password is {decoded}')
 
 def main():
     while True:
@@ -29,7 +34,7 @@ def main():
                     print("Invalid password, please enter an 8-digit number.")
             if sel == 2:
                 # prints encoded and decoded password
-                pass
+                decode(encoded_password)
             if sel == 3:
                 break
         else:
